@@ -5,11 +5,9 @@ import { getId, numberFormatter, parseObjValues } from '../../helper';
 import useHttp from '../../hooks/use-http';
 import { countriesActions } from '../../store/countries';
 import CountryItem from '../../components/Country/CountryItem';
-import Error from '../../components/UI/Error';
+
 import LinkButton from '../../components/UI/LinkButton';
 import Spinner from '../../components/UI/Spinner';
-
-import img from '../../assets/404 Error-rafiki.svg';
 
 import './index.scss';
 import NotFound from '../NotFound';
