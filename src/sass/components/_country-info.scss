@@ -1,0 +1,37 @@
+.country-info {
+	font-size: 1.4rem;
+
+	text-transform: capitalize;
+	list-style: none;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+	}
+
+	.item {
+		margin-bottom: -0.5rem;
+
+		&__heading {
+			font-size: 1em;
+			font-weight: 600;
+			display: inline;
+		}
+
+		&__value {
+			font-weight: 300;
+		}
+	}
+
+	&--lg {
+		display: flex;
+		flex-direction: column;
+		height: 90%;
+		font-size: 1.6rem;
+
+		.item {
+			margin-bottom: 0.25rem;
+		}
+	}
+}

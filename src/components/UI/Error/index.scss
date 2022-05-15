@@ -1,0 +1,29 @@
+.error {
+	text-align: center;
+
+	&__text {
+		font-size: 3rem;
+		margin-top: 3rem;
+		color: var(--color-grey-1);
+	}
+
+	&__img {
+		display: block;
+		margin: -3rem auto;
+		width: 50%;
+
+		&--fix {
+			display: block;
+			margin: -6rem auto -8rem auto;
+			width: 46%;
+		}
+	}
+
+	a {
+		text-transform: capitalize;
+		display: block;
+		font-size: 0.7rem;
+		margin-top: -2.5rem;
+		color: #afafaf;
+	}
+}

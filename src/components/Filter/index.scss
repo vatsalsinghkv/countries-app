@@ -1,0 +1,24 @@
+.select {
+	z-index: 10;
+	font-size: 1.4rem;
+	width: 200px;
+	position: relative;
+	user-select: none;
+
+	&__header {
+		text-transform: capitalize;
+		padding: 8px 20px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__options {
+		text-transform: capitalize;
+		width: 100%;
+		position: absolute;
+		top: 50px;
+		left: 0;
+	}
+}

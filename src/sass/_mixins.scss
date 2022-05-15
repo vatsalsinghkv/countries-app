@@ -1,0 +1,10 @@
+@mixin flexCenter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin max-width {
+	max-width: var(--max-width);
+	margin: 0 auto;
+}

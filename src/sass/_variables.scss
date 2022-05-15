@@ -1,0 +1,47 @@
+@use 'sass:math';
+
+@mixin dark-theme {
+	--color-bg: hsl(207, 26%, 17%);
+	--color-primary: hsl(209, 23%, 22%);
+	--color-text: hsl(0, 0%, 100%);
+}
+
+@mixin light-theme {
+	--color-bg: hsl(0, 0%, 98%);
+	--color-primary: hsl(0, 0%, 100%);
+	--color-text: hsl(200, 15%, 8%);
+}
+
+:root {
+	// FONTS
+	--font-primary: 'Nunito Sans', sans-serif;
+	--font-size: 1.8rem;
+
+	// COLORS
+	@include light-theme;
+
+	// WIDTH
+	--max-width: 125rem;
+
+	// BREAK POINTS
+	--lg: math.div(1200, 16) * 1em;
+	--lg-sm: math.div(1100, 16) * 1em;
+	--md: math.div(975, 16) * 1em;
+	--md-sm: math.div(680, 16) * 1em;
+	--sm: math.div(400, 16) * 1em;
+	--sm-sm: math.div(320, 16) * 1em;
+}
+
+.dark-theme {
+	@include dark-theme;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		@include dark-theme;
+	}
+
+	.dark-theme {
+		@include light-theme;
+	}
+}

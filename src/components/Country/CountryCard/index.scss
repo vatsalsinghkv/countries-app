@@ -1,0 +1,33 @@
+.country {
+	max-width: 32rem;
+	width: 100%;
+
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		transform: translateY(-8px);
+		box-shadow: 5px 5px 10px 5px rgba($color: #000, $alpha: 0.06);
+	}
+
+	&:active {
+		transform: translateY(-3px);
+	}
+
+	&__figcaption {
+		padding: 2.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	&__flag {
+		width: 100%;
+		// height: 150px;
+		display: block;
+	}
+
+	&__name {
+		font-size: 1.8rem;
+		// margin: 1.5rem 0;
+		margin-bottom: 0.5rem;
+	}
+}

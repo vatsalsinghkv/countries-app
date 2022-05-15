@@ -1,0 +1,15 @@
+@use '../../sass/mixins' as *;
+
+.main {
+	@include max-width;
+
+	position: relative;
+	display: grid;
+	justify-content: space-between;
+
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	grid-gap: 7rem;
+	min-height: 60vh;
+
+	margin-bottom: 10rem;
+}
