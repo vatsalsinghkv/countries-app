@@ -11,7 +11,7 @@ import img from '../../assets/Search-amico.svg';
 import './index.scss';
 
 const Main = () => {
-	const { isLoading, error, load: loadCountries } = useLoader();
+	const { isLoading, load: loadCountries } = useLoader();
 	const { all: allCountries, filtered: countries } = useSelector(
 		state => state.countries
 	);
