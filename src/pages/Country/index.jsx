@@ -21,7 +21,9 @@ const CountryDetails = () => {
 	const dispatch = useDispatch();
 
 	const c = useSelector(state =>
-		state.countries.all.find(country => country.cca3 === countryId)
+		state.countries.all.find(
+			country => country.cca3.toLowerCase() === countryId.toLocaleLowerCase()
+		)
 	);
 
 	useEffect(() => {
