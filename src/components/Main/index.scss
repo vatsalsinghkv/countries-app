@@ -1,4 +1,5 @@
 @use '../../sass/mixins' as *;
+@use '../../sass/variables' as *;
 
 .main {
 	@include max-width;
@@ -7,8 +8,14 @@
 	display: grid;
 	justify-content: space-between;
 
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 	grid-gap: 7rem;
+
+	@media only screen and (max-width: $md-sm) {
+		grid-gap: 4rem;
+	}
+
+	justify-items: center;
 	min-height: 60vh;
 
 	margin-bottom: 10rem;

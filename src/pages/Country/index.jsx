@@ -8,9 +8,9 @@ import CountryItem from '../../components/Country/CountryItem';
 
 import LinkButton from '../../components/UI/LinkButton';
 import Spinner from '../../components/UI/Spinner';
+import NotFound from '../NotFound';
 
 import './index.scss';
-import NotFound from '../NotFound';
 
 const CountryDetails = () => {
 	const country = useSelector(state => state.countries.active);
@@ -68,7 +68,7 @@ const CountryDetails = () => {
 	];
 
 	const border = {
-		borders:
+		'border countries':
 			borders &&
 			borders.map(border => (
 				<LinkButton key={getId()} to={`/${border}`}>
@@ -78,7 +78,7 @@ const CountryDetails = () => {
 	};
 
 	return (
-		<div className="country-details">
+		<div className="country-details container">
 			{isLoading && <Spinner />}
 			{!country && !isLoading && <NotFound />}
 

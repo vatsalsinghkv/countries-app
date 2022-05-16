@@ -1,13 +1,23 @@
+@use '../../sass/variables' as *;
+
 .select {
 	z-index: 10;
 	font-size: 1.4rem;
-	width: 200px;
+	max-width: 19rem;
+	width: 100%;
+
+	margin-left: 2rem;
+
+	@media only screen and (max-width: $sm) {
+		margin-left: 0;
+	}
+
 	position: relative;
 	user-select: none;
 
 	&__header {
 		text-transform: capitalize;
-		padding: 8px 20px;
+		padding: 0.8rem 2rem;
 		cursor: pointer;
 		display: flex;
 		align-items: center;
@@ -18,7 +28,7 @@
 		text-transform: capitalize;
 		width: 100%;
 		position: absolute;
-		top: 50px;
+		top: 5rem;
 		left: 0;
 	}
 }

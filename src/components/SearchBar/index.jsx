@@ -3,6 +3,8 @@ import { countriesActions } from '../../store/countries';
 import { searchActions } from '../../store/search';
 import Card from '../UI/Card';
 
+import './index.scss';
+
 const SearchBar = () => {
 	const isDark = useSelector(state => state.theme.isDark);
 	const search = useSelector(state => state.search.value);
@@ -21,11 +23,11 @@ const SearchBar = () => {
 	};
 
 	return (
-		<Card className="form__search-bar">
+		<Card className="search-bar">
 			{isDark || <ion-icon name="search-sharp" />}
 			{isDark && <ion-icon name="search-sharp" className="dark" />}
 			<input
-				className="form__input"
+				className="search-bar__input"
 				type="text"
 				name="search"
 				placeholder="Search for a country..."

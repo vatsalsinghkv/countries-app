@@ -10,14 +10,16 @@ const Header = () => {
 
 	return (
 		<header className="header">
-			<Link to="/" className="header__heading">
-				Where in the world?
-			</Link>
-			<button className="btn header__btn" onClick={() => dispatch(toggle())}>
-				{isDark && <ion-icon name="moon" />}
-				{isDark || <ion-icon name="moon-outline" />}
-				Dark Mode
-			</button>
+			<div className="container header__content">
+				<Link to="/" className="header__heading">
+					Where in the world?
+				</Link>
+				<button className="btn header__btn" onClick={() => dispatch(toggle())}>
+					{isDark && <ion-icon name="moon" />}
+					{isDark || <ion-icon name="moon-outline" />}
+					Dark Mode
+				</button>
+			</div>
 		</header>
 	);
 };

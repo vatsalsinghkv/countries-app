@@ -1,3 +1,5 @@
+@use '../../../sass/variables' as *;
+
 .link-btn {
 	&,
 	&:link,
@@ -34,7 +36,14 @@
 		font-size: 1.2rem;
 		padding: 3px 25px;
 		margin: 0 0.5rem 1rem 0.5rem;
+
 		display: inline-block;
+
+		@media only screen and (max-width: $lg-sm) {
+			&:first-child {
+				margin-left: 0;
+			}
+		}
 	}
 
 	&:hover,

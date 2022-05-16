@@ -1,5 +1,6 @@
 @use 'sass:math';
 @use './mixins' as *;
+@use './variables' as *;
 
 /*
 FONT SIZE SYSTEM (px)
@@ -10,11 +11,11 @@ html {
 	font-size: math.div(100, 16) * 10%; //62.5% - 10px
 	// font-size: 10px;
 
-	@media only screen and (max-width: var(--lg)) {
+	@media only screen and (max-width: $lg) {
 		font-size: math.div(100, 16) * 9%;
 	}
 
-	@media only screen and (max-width: var(--md)) {
+	@media only screen and (max-width: $md) {
 		font-size: math.div(100, 16) * 8%;
 	}
 }
@@ -31,4 +32,6 @@ body {
 
 .container {
 	@include max-width;
+	// margin: 0 3%;
+	padding: 0 3%;
 }

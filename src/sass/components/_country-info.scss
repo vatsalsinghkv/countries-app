@@ -1,13 +1,26 @@
+@use '../variables' as *;
+
 .country-info {
 	font-size: 1.4rem;
 
 	text-transform: capitalize;
 	list-style: none;
 
+	@media only screen and (max-width: $lg-sm) {
+		&__left {
+			margin-bottom: 3rem;
+		}
+	}
+
 	&__container {
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 2rem;
+
+		@media only screen and (max-width: $lg-sm) {
+			margin-bottom: 2.5rem;
+			flex-direction: column;
+		}
 	}
 
 	.item {

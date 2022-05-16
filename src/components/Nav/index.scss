@@ -1,31 +1,16 @@
+@use '../../sass/variables' as *;
+
 .form {
 	max-width: var(--max-width);
 	position: relative;
 	z-index: 5;
 	margin: 3.5rem auto 4rem auto;
+
 	display: flex;
 	justify-content: space-between;
 
-	&__search-bar {
-		display: flex;
-		align-items: center;
-
-		padding: 0.5rem 0rem 0.5rem 2rem;
-		max-width: 40rem;
-		width: 100%;
-	}
-
-	&__input {
-		background: none;
-		border: none;
-		color: var(--color-text);
-		padding: 1rem;
-		width: 100%;
-		outline: none;
-
-		&::placeholder {
-			color: var(--color-text);
-		}
+	@media only screen and (max-width: $sm) {
+		flex-direction: column;
 	}
 
 	ion-icon {

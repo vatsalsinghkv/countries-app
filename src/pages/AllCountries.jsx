@@ -3,10 +3,10 @@ import Nav from '../components/Nav';
 
 const AllCountries = () => {
 	return (
-		<>
+		<div className="container">
 			<Nav />
 			<Main />
-		</>
+		</div>
 	);
 };
 

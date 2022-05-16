@@ -21,16 +21,16 @@
 	@include light-theme;
 
 	// WIDTH
-	--max-width: 125rem;
-
-	// BREAK POINTS
-	--lg: math.div(1200, 16) * 1em;
-	--lg-sm: math.div(1100, 16) * 1em;
-	--md: math.div(975, 16) * 1em;
-	--md-sm: math.div(680, 16) * 1em;
-	--sm: math.div(400, 16) * 1em;
-	--sm-sm: math.div(320, 16) * 1em;
+	--max-width: 130rem;
 }
+
+// BREAK POINTS
+$lg: math.div(1200, 16) * 1em;
+$lg-sm: math.div(1150, 16) * 1em;
+$md: math.div(900, 16) * 1em;
+$md-sm: math.div(680, 16) * 1em;
+$sm: math.div(485, 16) * 1em;
+$sm-sm: math.div(320, 16) * 1em;
 
 .dark-theme {
 	@include dark-theme;
