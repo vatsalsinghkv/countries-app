@@ -2,6 +2,8 @@
 @use '../../sass/variables' as *;
 
 .country-details {
+  min-height: 80vh;
+  height: 100%;
 	&__main {
 		display: flex;
 
