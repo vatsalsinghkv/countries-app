@@ -7,6 +7,7 @@ import Error from '../UI/Error';
 import Spinner from '../UI/Spinner';
 
 import img from '../../assets/Search-amico.svg';
+import { TOTAL_COUNTRIES } from '../../helper/config';
 
 import './index.scss';
 
@@ -17,7 +18,7 @@ const Main = () => {
 	);
 
 	useEffect(() => {
-		if (allCountries.length === 250) {
+		if (allCountries.length === TOTAL_COUNTRIES) {
 			return;
 		}
 		loadCountries();
