@@ -26,6 +26,7 @@ const useLoader = () => {
 
 	const load = useCallback(
 		(countryId = null, foundCountry = false) => {
+			// Loading a Country
 			if (countryId) {
 				if (foundCountry) {
 					dispatch(setCountry(foundCountry));
@@ -37,6 +38,7 @@ const useLoader = () => {
 				});
 			}
 
+			// Loading all countries
 			sendRequest(COUNTRIES_URL, data => {
 				dispatch(setCountries(data.sort(ascSort)));
 			});
