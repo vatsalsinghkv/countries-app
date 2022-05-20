@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Filter from '../Filter';
 import SearchBar from '../SearchBar';
 import './index.scss';
@@ -17,4 +18,4 @@ const Nav = () => {
 	);
 };
 
-export default Nav;
+export default memo(Nav);

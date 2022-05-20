@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { themeActions } from '../../store/theme';
@@ -24,4 +25,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default memo(Header);

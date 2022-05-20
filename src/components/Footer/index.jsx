@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import './index.scss';
 
 const Footer = ({ name, github }) => {
@@ -15,4 +16,4 @@ const Footer = ({ name, github }) => {
 	);
 };
 
-export default Footer;
+export default memo(Footer);
