@@ -1,11 +1,10 @@
 import { memo, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getId, numberFormatter, parseObjValues } from '../../helper';
-import useHttp from '../../hooks/use-http';
-import { countriesActions } from '../../store/countries';
-import CountryItem from '../../components/Country/CountryItem';
+import useLoader from '../../hooks/use-loader';
 
+import CountryItem from '../../components/Country/CountryItem';
 import LinkButton from '../../components/UI/LinkButton';
 import Spinner from '../../components/UI/Spinner';
 import NotFound from '../NotFound';
@@ -14,31 +13,19 @@ import './index.scss';
 
 const CountryDetails = () => {
 	const country = useSelector(state => state.countries.active);
-	const { setCountry } = countriesActions;
-	const { isLoading, sendRequest } = useHttp();
+	const { isLoading, load: loadCountry } = useLoader();
 	const { countryId } = useParams();
 	const navigate = useNavigate();
-	const dispatch = useDispatch();
 
-	const c = useSelector(state =>
+	const foundCountry = useSelector(state =>
 		state.countries.all.find(
 			country => country.cca3.toLowerCase() === countryId.toLocaleLowerCase()
 		)
 	);
 
 	useEffect(() => {
-		if (c) {
-			dispatch(setCountry(c));
-			return;
-		}
-
-		const getData = data => dispatch(setCountry(data));
-
-		sendRequest(
-			`https://restcountries.com/v3.1/alpha/${countryId}?fields=name,capital,region,subregion,flags,population,cca3,borders,currencies,languages,tld`,
-			getData
-		);
-	}, [sendRequest, countryId, dispatch, c, setCountry]);
+		loadCountry(countryId, foundCountry);
+	}, [loadCountry, countryId, foundCountry]);
 
 	const {
 		name,

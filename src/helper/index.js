@@ -1,3 +1,5 @@
+import { FIELDS, URL } from './config';
+
 /**
  * Returns a unique id
  * @returns {String} Unique id format id123..
@@ -40,7 +42,7 @@ export const timeout = async function (sec) {
 export const arrToStr = arr => arr.join(', ');
 
 /**
- *
+ * Parse data in string from nested objects
  * @param {String} prop Property name which you want
  * @param {String} value Nested key value of the property
  * @param {Number} [1, default = 2] level upto which element is nested
@@ -74,4 +76,14 @@ export const parseObjValues = (prop, value = '', level = 2) => {
 	}
 
 	return arrToStr(values);
+};
+
+/**
+ * Get country's url from rest api
+ * @param {String} countryId
+ * @returns {String} URL (Api)
+ */
+
+export const getCountryURL = countryId => {
+	return `${URL}/alpha/${countryId}?${FIELDS}`;
 };
