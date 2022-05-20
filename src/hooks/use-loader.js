@@ -26,7 +26,7 @@ const useLoader = () => {
 
 	const load = useCallback(
 		(countryId = null, foundCountry = false) => {
-			// Loading a Country
+			// Loading a Country with CountryID
 			if (countryId) {
 				if (foundCountry) {
 					dispatch(setCountry(foundCountry));
