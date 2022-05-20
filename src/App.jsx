@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AllCountries from './pages/AllCountries';
-// import Country from './pages/Country';
+import Country from './pages/Country';
 // import NotFound from './pages/NotFound';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -9,7 +9,6 @@ import Spinner from './components/UI/Spinner';
 import './App.scss';
 
 // Loaded only when these routes are visited
-const Country = React.lazy(() => import('./pages/Country'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const App = () => {

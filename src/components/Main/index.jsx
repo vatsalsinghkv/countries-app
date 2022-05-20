@@ -4,13 +4,11 @@ import { TOTAL_COUNTRIES } from '../../helper/config';
 import useLoader from '../../hooks/use-loader';
 
 import CountryCard from '../Country/CountryCard';
-// import Error from '../UI/Error';
+import Error from '../UI/Error';
 import Spinner from '../UI/Spinner';
 
 import img from '../../assets/Search-amico.svg';
 import './index.scss';
-
-const Error = React.lazy(() => import('../UI/Error'));
 
 const Main = () => {
 	const { isLoading, load: loadCountries } = useLoader();
@@ -30,14 +28,12 @@ const Main = () => {
 			{isLoading ? (
 				<Spinner />
 			) : !countries.length ? (
-				<Suspense fallback={<Spinner />}>
-					<Error
-						text="Oops! No country found..."
-						img={img}
-						type="web"
-						className="error__img--fix"
-					/>
-				</Suspense>
+				<Error
+					text="Oops! No country found..."
+					img={img}
+					type="web"
+					className="error__img--fix"
+				/>
 			) : (
 				countries.map(country => (
 					<CountryCard
