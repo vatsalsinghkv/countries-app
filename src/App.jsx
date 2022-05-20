@@ -1,27 +1,35 @@
-import './App.scss';
+import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import CountryDetails from './pages/Country';
 import AllCountries from './pages/AllCountries';
-import NotFound from './pages/NotFound';
+// import Country from './pages/Country';
+// import NotFound from './pages/NotFound';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Spinner from './components/UI/Spinner';
+import './App.scss';
+
+// Loaded only when these routes are visited
+const Country = React.lazy(() => import('./pages/Country'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const App = () => {
 	return (
 		<div className="App">
 			<Header />
-			<Routes>
-				<Route
-					path="/"
-					element={
-						<>
-							<AllCountries />
-						</>
-					}
-				/>
-				<Route path=":countryId" element={<CountryDetails />} />
-				<Route path="*" element={<NotFound />} />
-			</Routes>
+			<Suspense fallback={<Spinner />}>
+				<Routes>
+					<Route
+						path="/"
+						element={
+							<>
+								<AllCountries />
+							</>
+						}
+					/>
+					<Route path=":countryId" element={<Country />} />
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+			</Suspense>
 			<Footer name="Vatsal Singh" github="https://github.com/vatsalsinghkv" />
 		</div>
 	);
