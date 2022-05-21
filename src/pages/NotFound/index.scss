@@ -1,0 +1,10 @@
+@use '../../sass/variables' as *;
+
+.not-found {
+	min-height: 90vh;
+	height: 100%;
+
+	@media only screen and (max-width: $md) {
+		min-height: 85vh;
+	}
+}

@@ -10,10 +10,11 @@ import Spinner from '../../components/UI/Spinner';
 import NotFound from '../NotFound';
 
 import './index.scss';
+import Error from '../../components/UI/Error';
 
 const CountryDetails = () => {
 	const country = useSelector(state => state.countries.active);
-	const { isLoading, load: loadCountry } = useLoader();
+	const { isLoading, load: loadCountry, error } = useLoader();
 	const { countryId } = useParams();
 	const navigate = useNavigate();
 
@@ -66,10 +67,26 @@ const CountryDetails = () => {
 
 	return (
 		<div className="country-details container">
-			{isLoading && <Spinner />}
-			{!country && !isLoading && <NotFound />}
+			{error &&
+				(error.code === 500 ? (
+					<Error
+						type="timeout"
+						message={error.message}
+						className="error__img error__img--default"
+					/>
+				) : error.message.slice(-3) === '400' ? (
+					<NotFound name="Country" />
+				) : (
+					<Error
+						type="404"
+						message={error.message}
+						className="error__img error__img--default"
+					/>
+				))}
 
-			{country && !isLoading && (
+			{isLoading && !error && <Spinner />}
+
+			{country && !isLoading && !error && (
 				<>
 					<LinkButton
 						type="button"

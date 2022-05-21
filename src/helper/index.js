@@ -27,7 +27,11 @@ export const numberFormatter = value => {
 export const timeout = async function (sec) {
 	return new Promise((_, reject) => {
 		setTimeout(() => {
-			reject(new Error(`Request took too long! Timeout after ${sec} second`));
+			const err = new Error(
+				`Request took too long! Timeout after ${sec} second`
+			);
+			err.code = 500;
+			reject(err);
 		}, sec * 1000);
 	});
 };

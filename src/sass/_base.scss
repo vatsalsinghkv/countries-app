@@ -23,6 +23,7 @@ html {
 body {
 	font-family: var(--font-primary);
 	font-size: var(--font-size);
+
 	color: var(--color-text);
 	background-color: var(--color-bg);
 	font-weight: 600;
@@ -32,6 +33,5 @@ body {
 
 .container {
 	@include max-width;
-	// margin: 0 3%;
 	padding: 0 3%;
 }

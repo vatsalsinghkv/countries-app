@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { TOTAL_COUNTRIES } from '../../helper/config';
 import useLoader from '../../hooks/use-loader';
@@ -7,11 +7,10 @@ import CountryCard from '../Country/CountryCard';
 import Error from '../UI/Error';
 import Spinner from '../UI/Spinner';
 
-import img from '../../assets/Search-amico.svg';
 import './index.scss';
 
 const Main = () => {
-	const { isLoading, load: loadCountries } = useLoader();
+	const { isLoading, load: loadCountries, error } = useLoader();
 	const { all: allCountries, filtered: countries } = useSelector(
 		state => state.countries
 	);
@@ -25,15 +24,17 @@ const Main = () => {
 
 	return (
 		<main className="main">
-			{isLoading ? (
+			{error &&
+				(error.code === 500 ? (
+					<Error type="timeout" message={error.message} />
+				) : (
+					<Error type="404" message={error.message} />
+				))}
+
+			{isLoading && !error ? (
 				<Spinner />
-			) : !countries.length ? (
-				<Error
-					text="Oops! No country found..."
-					img={img}
-					type="web"
-					className="error__img--fix"
-				/>
+			) : !countries.length && !error ? (
+				<Error type="not-found" message="Oops! No country found..." />
 			) : (
 				countries.map(country => (
 					<CountryCard

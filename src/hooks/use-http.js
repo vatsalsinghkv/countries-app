@@ -27,7 +27,7 @@ const useHttp = () => {
 			const res = await Promise.race([axios.get(url), timeout(TIMEOUT_SEC)]);
 			callback(res.data);
 		} catch (err) {
-			setError(err.message || 'Something went wrong!');
+			setError({ ...err, message: err.message || 'Something went wrong!' });
 		}
 
 		setIsLoading(false);
