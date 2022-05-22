@@ -1,15 +1,17 @@
 @use 'sass:math';
 
 @mixin dark-theme {
-	--color-bg: hsl(207, 26%, 17%);
-	--color-primary: hsl(209, 23%, 22%);
-	--color-text: hsl(0, 0%, 100%);
+	--color-bg: #202c37;
+	--color-primary: #2b3945;
+	--color-grey: #cbd5e1;
+	--color-text: #ffffff;
 }
 
 @mixin light-theme {
-	--color-bg: hsl(0, 0%, 98%);
-	--color-primary: hsl(0, 0%, 100%);
-	--color-text: hsl(200, 15%, 8%);
+	--color-bg: #fafafa;
+	--color-primary: #ffffff;
+	--color-grey: #64748b;
+	--color-text: #111517;
 }
 
 :root {
