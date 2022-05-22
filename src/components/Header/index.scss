@@ -4,7 +4,7 @@
 	&__content {
 		display: flex;
 		justify-content: space-between;
-		padding: 1.5rem 3%;
+		padding: 1.75rem 3%;
 
 		@media only screen and (max-width: $md-sm) {
 			padding: 2rem 3%;
@@ -16,6 +16,7 @@
 
 	&__heading {
 		text-decoration: none;
+		font-weight: 800;
 		color: var(--color-text);
 		font-size: 2.4rem;
 		align-self: center;
@@ -28,13 +29,14 @@
 
 	&__btn {
 		padding-right: 0;
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 		display: flex;
 		justify-content: space-between;
-		width: 11.5rem;
+		width: 11.75rem;
 		color: var(--color-text);
 
 		@media only screen and (max-width: $sm) {
+			font-size: 1.4rem;
 			width: 11rem;
 		}
 
