@@ -12,7 +12,7 @@ const Header = () => {
 	return (
 		<header className="header">
 			<div className="container header__content">
-				<h1 to="/" className="header__heading">
+				<h1 className="header__heading">
 					<Link to="/"> Where in the world?</Link>
 				</h1>
 				<button className="btn header__btn" onClick={() => dispatch(toggle())}>
