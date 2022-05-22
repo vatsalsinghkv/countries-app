@@ -12,9 +12,9 @@ const Header = () => {
 	return (
 		<header className="header">
 			<div className="container header__content">
-				<Link to="/" className="header__heading">
-					Where in the world?
-				</Link>
+				<h1 to="/" className="header__heading">
+					<Link to="/"> Where in the world?</Link>
+				</h1>
 				<button className="btn header__btn" onClick={() => dispatch(toggle())}>
 					{isDark && <ion-icon name="moon" />}
 					{isDark || <ion-icon name="moon-outline" />}

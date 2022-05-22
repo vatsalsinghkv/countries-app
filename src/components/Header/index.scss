@@ -15,12 +15,14 @@
 	background-color: var(--color-primary);
 
 	&__heading {
-		text-decoration: none;
-		font-weight: 800;
-		color: var(--color-text);
 		font-size: 2.4rem;
+		font-weight: 800;
 		align-self: center;
-		cursor: pointer;
+
+		& > * {
+			text-decoration: none;
+			color: var(--color-text);
+		}
 
 		@media only screen and (max-width: $md-sm) {
 			font-size: 2rem;
