@@ -17,19 +17,12 @@ const App = () => {
 			<Header />
 			<Suspense fallback={<Spinner />}>
 				<Routes>
-					<Route
-						path="/"
-						element={
-							<>
-								<AllCountries />
-							</>
-						}
-					/>
+					<Route path="/" element={<AllCountries />} />
 					<Route path=":countryId" element={<Country />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</Suspense>
-			<Footer name="Vatsal Singh" github="https://github.com/vatsalsinghkv" />
+			<Footer />
 		</div>
 	);
 };
