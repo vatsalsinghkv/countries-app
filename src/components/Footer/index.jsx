@@ -1,7 +1,10 @@
 import { memo } from 'react';
 import './index.scss';
 
-const Footer = ({ name, github }) => {
+const Footer = ({
+	name = 'Vatsal Singh',
+	github = 'https://github.com/vatsalsinghkv',
+}) => {
 	return (
 		<footer className="footer">
 			{'created by '}
