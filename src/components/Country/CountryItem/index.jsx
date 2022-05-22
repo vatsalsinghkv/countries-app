@@ -6,7 +6,7 @@ const CountryItem = ({ item, className }) => {
 
 	return (
 		<li className={`item ${className}`}>
-			<h5 className="item__heading">{`${key}: `}</h5>
+			<h4 className="item__heading">{`${key}: `}</h4>
 			<span className="item__value" style={item?.style}>
 				{value}
 			</span>
