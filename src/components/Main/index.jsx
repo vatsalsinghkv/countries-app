@@ -23,7 +23,7 @@ const Main = () => {
 	}, [loadCountries, allCountries]);
 
 	return (
-		<main className="main">
+		<main className={`main ${isLoading ? 'main--lg' : ''}`}>
 			{error &&
 				(error.code === 500 ? (
 					<Error type="timeout" message={error.message} />
