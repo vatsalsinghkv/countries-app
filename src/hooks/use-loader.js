@@ -11,46 +11,46 @@ import { getCountryURL } from '../helper';
  */
 
 const useLoader = () => {
-	const { isLoading, error, sendRequest } = useHttp();
-	const { setCountries, setCountry } = countriesActions;
+  const { isLoading, error, sendRequest } = useHttp();
+  const { setCountries, setCountry } = countriesActions;
 
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-	/**
-	 * Callback function for sorting countries array in ascending order
-	 */
+  /**
+   * Callback function for sorting countries array in ascending order
+   */
 
-	const ascSort = useCallback((a, b) => {
-		return a.name.common.toUpperCase() > b.name.common.toUpperCase() ? 1 : -1;
-	}, []);
+  const ascSort = useCallback((a, b) => {
+    return a.name.common.toUpperCase() > b.name.common.toUpperCase() ? 1 : -1;
+  }, []);
 
-	const load = useCallback(
-		(countryId = null, foundCountry = false) => {
-			// Loading a Country with CountryID
-			if (countryId) {
-				if (foundCountry) {
-					dispatch(setCountry(foundCountry));
-					return;
-				}
+  const load = useCallback(
+    (countryId = null, foundCountry = false) => {
+      // Loading a Country with CountryID
+      if (countryId) {
+        if (foundCountry) {
+          dispatch(setCountry(foundCountry));
+          return;
+        }
 
-				sendRequest(getCountryURL(countryId), data => {
-					dispatch(setCountry(data));
-				});
-			}
+        sendRequest(getCountryURL(countryId), data => {
+          dispatch(setCountry(data));
+        });
+      }
 
-			// Loading all countries
-			sendRequest(COUNTRIES_URL, data => {
-				dispatch(setCountries(data.sort(ascSort)));
-			});
-		},
-		[dispatch, sendRequest, setCountry, ascSort, setCountries]
-	);
+      // Loading all countries
+      sendRequest(COUNTRIES_URL, data => {
+        dispatch(setCountries(data.sort(ascSort)));
+      });
+    },
+    [dispatch, sendRequest, setCountry, ascSort, setCountries]
+  );
 
-	return {
-		isLoading,
-		error,
-		load,
-	};
+  return {
+    isLoading,
+    error,
+    load,
+  };
 };
 
 export default useLoader;

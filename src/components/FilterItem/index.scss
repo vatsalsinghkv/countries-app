@@ -1,26 +1,26 @@
 .filter {
-	&__label {
-		&:first-child {
-			padding-top: 4px;
-		}
+  &__label {
+    &:first-child {
+      padding-top: 4px;
+    }
 
-		&:last-child {
-			padding-bottom: 4px;
-		}
-		padding: 2px 20px;
-		cursor: pointer;
+    &:last-child {
+      padding-bottom: 4px;
+    }
+    padding: 2px 20px;
+    cursor: pointer;
 
-		display: block;
-		width: 100%;
+    display: block;
+    width: 100%;
 
-		&:hover,
-		&:focus {
-			// font-weight: bold;
-			background-color: rgba(#000, 0.1);
-		}
-	}
+    &:hover,
+    &:focus {
+      // font-weight: bold;
+      background-color: rgba(#000, 0.1);
+    }
+  }
 
-	&__input {
-		display: none;
-	}
+  &__input {
+    display: none;
+  }
 }

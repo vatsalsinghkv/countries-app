@@ -12,19 +12,19 @@ import './App.scss';
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const App = () => {
-	return (
-		<div className="App">
-			<Header />
-			<Suspense fallback={<Spinner />}>
-				<Routes>
-					<Route path="/" element={<AllCountries />} />
-					<Route path=":countryId" element={<Country />} />
-					<Route path="*" element={<NotFound />} />
-				</Routes>
-			</Suspense>
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="App">
+      <Header />
+      <Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path="/" element={<AllCountries />} />
+          <Route path=":countryId" element={<Country />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+      <Footer />
+    </div>
+  );
 };
 
 export default App;

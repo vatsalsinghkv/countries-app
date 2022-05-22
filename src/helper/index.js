@@ -14,7 +14,7 @@ export const getId = () => `id${Math.random().toString(16).slice(2)}`;
  */
 
 export const numberFormatter = value => {
-	return new Intl.NumberFormat(navigator.language).format(value);
+  return new Intl.NumberFormat(navigator.language).format(value);
 };
 
 /**
@@ -25,15 +25,15 @@ export const numberFormatter = value => {
  */
 
 export const timeout = async function (sec) {
-	return new Promise((_, reject) => {
-		setTimeout(() => {
-			const err = new Error(
-				`Request took too long! Timeout after ${sec} second`
-			);
-			err.code = 500;
-			reject(err);
-		}, sec * 1000);
-	});
+  return new Promise((_, reject) => {
+    setTimeout(() => {
+      const err = new Error(
+        `Request took too long! Timeout after ${sec} second`
+      );
+      err.code = 500;
+      reject(err);
+    }, sec * 1000);
+  });
 };
 
 /**
@@ -65,21 +65,21 @@ export const arrToStr = arr => arr.join(', ');
  */
 
 export const parseObjValues = (prop, value = '', level = 2) => {
-	let values = [];
+  let values = [];
 
-	if (level === 1) {
-		for (const key in prop) {
-			values.push(prop[key]);
-		}
+  if (level === 1) {
+    for (const key in prop) {
+      values.push(prop[key]);
+    }
 
-		return arrToStr(values);
-	}
+    return arrToStr(values);
+  }
 
-	for (const key in prop) {
-		values.push(prop[key][value]);
-	}
+  for (const key in prop) {
+    values.push(prop[key][value]);
+  }
 
-	return arrToStr(values);
+  return arrToStr(values);
 };
 
 /**
@@ -89,5 +89,5 @@ export const parseObjValues = (prop, value = '', level = 2) => {
  */
 
 export const getCountryURL = countryId => {
-	return `${URL}/alpha/${countryId}?${FIELDS}`;
+  return `${URL}/alpha/${countryId}?${FIELDS}`;
 };

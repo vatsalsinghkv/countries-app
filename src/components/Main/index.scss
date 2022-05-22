@@ -2,22 +2,22 @@
 @use '../../sass/variables' as *;
 
 .main {
-	@include max-width;
+  @include max-width;
 
-	&--lg {
-		min-height: 60vh;
-	}
+  &--lg {
+    min-height: 60vh;
+  }
 
-	position: relative;
-	margin-bottom: 10rem;
+  position: relative;
+  margin-bottom: 10rem;
 
-	display: grid;
-	justify-content: space-between;
-	justify-items: center;
-	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-	grid-gap: 7rem;
+  display: grid;
+  justify-content: space-between;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-gap: 7rem;
 
-	@media only screen and (max-width: $md-sm) {
-		grid-gap: 4rem;
-	}
+  @media only screen and (max-width: $md-sm) {
+    grid-gap: 4rem;
+  }
 }

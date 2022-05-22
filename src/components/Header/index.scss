@@ -1,55 +1,55 @@
 @use '../../sass/variables' as *;
 
 .header {
-	&__content {
-		display: flex;
-		justify-content: space-between;
-		padding: 1.75rem 3%;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.75rem 3%;
 
-		@media only screen and (max-width: $md-sm) {
-			padding: 2rem 3%;
-		}
-	}
+    @media only screen and (max-width: $md-sm) {
+      padding: 2rem 3%;
+    }
+  }
 
-	box-shadow: 3px 3px 5px rgba($color: #000, $alpha: 0.05);
-	background-color: var(--color-primary);
+  box-shadow: 3px 3px 5px rgba($color: #000, $alpha: 0.05);
+  background-color: var(--color-primary);
 
-	&__heading {
-		font-size: 2.4rem;
-		font-weight: 800;
-		align-self: center;
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 800;
+    align-self: center;
 
-		& > * {
-			text-decoration: none;
-			color: var(--color-text);
-		}
+    & > * {
+      text-decoration: none;
+      color: var(--color-text);
+    }
 
-		@media only screen and (max-width: $md-sm) {
-			font-size: 2rem;
-		}
-	}
+    @media only screen and (max-width: $md-sm) {
+      font-size: 2rem;
+    }
+  }
 
-	&__btn {
-		padding-right: 0;
-		font-size: 1.5rem;
-		display: flex;
-		justify-content: space-between;
-		width: 11.75rem;
-		color: var(--color-text);
+  &__btn {
+    padding-right: 0;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    width: 11.75rem;
+    color: var(--color-text);
 
-		@media only screen and (max-width: $sm) {
-			font-size: 1.4rem;
-			width: 11rem;
-		}
+    @media only screen and (max-width: $sm) {
+      font-size: 1.4rem;
+      width: 11rem;
+    }
 
-		ion-icon {
-			font-size: 1.5rem;
-			@media only screen and (max-width: $sm) {
-			}
-		}
+    ion-icon {
+      font-size: 1.5rem;
+      @media only screen and (max-width: $sm) {
+      }
+    }
 
-		ion-icon[name='moon'] {
-			color: var(--color-text);
-		}
-	}
+    ion-icon[name='moon'] {
+      color: var(--color-text);
+    }
+  }
 }

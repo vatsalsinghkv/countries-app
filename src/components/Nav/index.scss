@@ -1,21 +1,21 @@
 @use '../../sass/variables' as *;
 
 .form {
-	max-width: var(--max-width);
-	position: relative;
-	z-index: 5;
-	margin: 4rem auto 5rem auto;
+  max-width: var(--max-width);
+  position: relative;
+  z-index: 5;
+  margin: 4rem auto 5rem auto;
 
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-	@media only screen and (max-width: $sm) {
-		flex-direction: column;
-	}
+  @media only screen and (max-width: $sm) {
+    flex-direction: column;
+  }
 
-	ion-icon {
-		&.dark {
-			color: var(--color-text);
-		}
-	}
+  ion-icon {
+    &.dark {
+      color: var(--color-text);
+    }
+  }
 }

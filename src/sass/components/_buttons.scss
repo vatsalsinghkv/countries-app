@@ -1,16 +1,16 @@
 .btn {
-	// <button> too
-	&,
-	&:link,
-	&:visited {
-		display: inline-block;
-		padding: 1rem 2rem;
-		transition: all 0.2s;
+  // <button> too
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    padding: 1rem 2rem;
+    transition: all 0.2s;
 
-		text-decoration: none;
-		background: none;
-		border: none;
-		outline: none !important;
-		cursor: pointer;
-	}
+    text-decoration: none;
+    background: none;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+  }
 }

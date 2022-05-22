@@ -1,60 +1,60 @@
 @use '../../../sass/variables' as *;
 
 .link-btn {
-	&,
-	&:link,
-	&:visited {
-		text-decoration: none;
-		background: none;
-		border: none;
-		outline: none !important;
-		cursor: pointer;
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    background: none;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
 
-		text-decoration: none;
-		color: var(--color-text);
-		background-color: var(--color-primary);
+    text-decoration: none;
+    color: var(--color-text);
+    background-color: var(--color-primary);
 
-		box-shadow: rgba($color: #000, $alpha: 0.15) 0px 1px 10px;
-		border-radius: 4px;
+    box-shadow: rgba($color: #000, $alpha: 0.15) 0px 1px 10px;
+    border-radius: 4px;
 
-		transition: all 0.2s;
+    transition: all 0.2s;
 
-		ion-icon {
-			margin-right: 10px;
-		}
-	}
+    ion-icon {
+      margin-right: 10px;
+    }
+  }
 
-	&--btn {
-		font-size: 1.4rem;
-		width: 120px;
-		display: flex;
-		align-items: center;
-		padding: 10px 25px;
-	}
+  &--btn {
+    font-size: 1.4rem;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+  }
 
-	&--link {
-		font-size: 1.2rem;
-		padding: 3px 25px;
-		margin: 0 0.5rem 1rem 0.5rem;
+  &--link {
+    font-size: 1.2rem;
+    padding: 3px 25px;
+    margin: 0 0.5rem 1rem 0.5rem;
 
-		display: inline-block;
+    display: inline-block;
 
-		@media only screen and (max-width: $lg-sm) {
-			&:first-child {
-				margin-left: 0;
-			}
-		}
-	}
+    @media only screen and (max-width: $lg-sm) {
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
 
-	&:hover,
-	&:focus {
-		outline: none;
-		transform: translateY(-3px);
-		box-shadow: rgba($color: #000, $alpha: 0.15) 0px 4px 15px;
-	}
+  &:hover,
+  &:focus {
+    outline: none;
+    transform: translateY(-3px);
+    box-shadow: rgba($color: #000, $alpha: 0.15) 0px 4px 15px;
+  }
 
-	&:active {
-		transform: translateY(-1.5px);
-		box-shadow: rgba($color: #000, $alpha: 0.15) 0px 4px 12px;
-	}
+  &:active {
+    transform: translateY(-1.5px);
+    box-shadow: rgba($color: #000, $alpha: 0.15) 0px 4px 12px;
+  }
 }

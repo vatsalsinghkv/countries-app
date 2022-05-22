@@ -8,30 +8,30 @@ FONT SIZE SYSTEM (px)
 */
 
 html {
-	font-size: math.div(100, 16) * 10%; //62.5% - 10px
-	// font-size: 10px;
+  font-size: math.div(100, 16) * 10%; //62.5% - 10px
+  // font-size: 10px;
 
-	@media only screen and (max-width: $lg) {
-		font-size: math.div(100, 16) * 9%;
-	}
+  @media only screen and (max-width: $lg) {
+    font-size: math.div(100, 16) * 9%;
+  }
 
-	@media only screen and (max-width: $md) {
-		// font-size: math.div(100, 16) * 8%;
-	}
+  @media only screen and (max-width: $md) {
+    // font-size: math.div(100, 16) * 8%;
+  }
 }
 
 body {
-	font-family: var(--font-primary);
-	font-size: var(--font-size);
+  font-family: var(--font-primary);
+  font-size: var(--font-size);
 
-	color: var(--color-text);
-	background-color: var(--color-bg);
-	font-weight: 600;
-	line-height: 165%;
-	// padding: 0 5%;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-weight: 600;
+  line-height: 165%;
+  // padding: 0 5%;
 }
 
 .container {
-	@include max-width;
-	padding: 0 3%;
+  @include max-width;
+  padding: 0 3%;
 }

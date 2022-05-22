@@ -1,29 +1,29 @@
 @use 'sass:math';
 
 @mixin dark-theme {
-	--color-bg: #202c37;
-	--color-primary: #2b3945;
-	--color-grey: #cbd5e1;
-	--color-text: #ffffff;
+  --color-bg: #202c37;
+  --color-primary: #2b3945;
+  --color-grey: #cbd5e1;
+  --color-text: #ffffff;
 }
 
 @mixin light-theme {
-	--color-bg: #fafafa;
-	--color-primary: #ffffff;
-	--color-grey: #64748b;
-	--color-text: #111517;
+  --color-bg: #fafafa;
+  --color-primary: #ffffff;
+  --color-grey: #64748b;
+  --color-text: #111517;
 }
 
 :root {
-	// FONTS
-	--font-primary: 'Nunito Sans', sans-serif;
-	--font-size: 1.8rem;
+  // FONTS
+  --font-primary: 'Nunito Sans', sans-serif;
+  --font-size: 1.8rem;
 
-	// COLORS
-	@include light-theme;
+  // COLORS
+  @include light-theme;
 
-	// WIDTH
-	--max-width: 130rem;
+  // WIDTH
+  --max-width: 130rem;
 }
 
 // BREAK POINTS
@@ -35,15 +35,15 @@ $sm: math.div(485, 16) * 1em;
 $sm-sm: math.div(320, 16) * 1em;
 
 .dark-theme {
-	@include dark-theme;
+  @include dark-theme;
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		@include dark-theme;
-	}
+  :root {
+    @include dark-theme;
+  }
 
-	.dark-theme {
-		@include light-theme;
-	}
+  .dark-theme {
+    @include light-theme;
+  }
 }

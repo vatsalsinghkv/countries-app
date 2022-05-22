@@ -1,35 +1,35 @@
 @use '../../sass/variables' as *;
 
 .select {
-	z-index: 10;
-	font-size: 1.4rem;
-	max-width: 19rem;
-	width: 100%;
+  z-index: 10;
+  font-size: 1.4rem;
+  max-width: 19rem;
+  width: 100%;
 
-	margin-left: 2rem;
+  margin-left: 2rem;
 
-	@media only screen and (max-width: $sm) {
-		margin-left: 0;
-		font-size: 1.5rem;
-	}
+  @media only screen and (max-width: $sm) {
+    margin-left: 0;
+    font-size: 1.5rem;
+  }
 
-	position: relative;
-	user-select: none;
+  position: relative;
+  user-select: none;
 
-	&__header {
-		text-transform: capitalize;
-		padding: 1rem 2rem;
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+  &__header {
+    text-transform: capitalize;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-	&__options {
-		text-transform: capitalize;
-		width: 100%;
-		position: absolute;
-		top: 5.75rem;
-		left: 0;
-	}
+  &__options {
+    text-transform: capitalize;
+    width: 100%;
+    position: absolute;
+    top: 5.75rem;
+    left: 0;
+  }
 }

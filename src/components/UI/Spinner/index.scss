@@ -1,28 +1,28 @@
 @use '../../../sass/mixins' as *;
 
 .spinner {
-	display: inline-block;
+  display: inline-block;
 
-	width: 5rem;
-	height: 5rem;
-	border: 3px solid var(--color-primary);
+  width: 5rem;
+  height: 5rem;
+  border: 3px solid var(--color-primary);
 
-	border-radius: 50%;
-	border-top-color: var(--color-text);
-	animation: spin 0.8s ease-in-out infinite;
+  border-radius: 50%;
+  border-top-color: var(--color-text);
+  animation: spin 0.8s ease-in-out infinite;
 }
 
 @keyframes spin {
-	to {
-		transform: rotate(360deg);
-	}
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .center {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	@include flexCenter;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  @include flexCenter;
 }

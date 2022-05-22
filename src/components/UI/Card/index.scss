@@ -1,13 +1,13 @@
 .card {
-	background-color: var(--color-primary);
-	border-radius: 4px;
-	box-shadow: 2px 5px 10px 5px rgba($color: #000, $alpha: 0.03);
-	overflow: hidden;
-	transition: all 0.2s;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  box-shadow: 2px 5px 10px 5px rgba($color: #000, $alpha: 0.03);
+  overflow: hidden;
+  transition: all 0.2s;
 
-	&:hover,
-	&:focus {
-		// transform: translateY(-2px);
-		box-shadow: 5px 5px 10px 5px rgba($color: #000, $alpha: 0.06);
-	}
+  &:hover,
+  &:focus {
+    // transform: translateY(-2px);
+    box-shadow: 5px 5px 10px 5px rgba($color: #000, $alpha: 0.06);
+  }
 }

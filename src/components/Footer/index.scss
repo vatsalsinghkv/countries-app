@@ -1,21 +1,20 @@
 .footer {
-	// position: fixed;
-	left: 0;
-	width: 100%;
-	bottom: 1vh;
+  // position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 1vh;
 
+  font-size: 1.2rem;
+  color: #a9a9a9;
+  text-align: center;
+  margin-top: auto;
 
-	font-size: 1.2rem;
-	color: #a9a9a9;
-	text-align: center;
-	margin-top: auto;
+  a {
+    text-decoration: none;
+    color: currentColor;
 
-	a {
-		text-decoration: none;
-		color: currentColor;
-
-		&.name {
-			font-weight: 700;
-		}
-	}
+    &.name {
+      font-weight: 700;
+    }
+  }
 }

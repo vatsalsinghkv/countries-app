@@ -65,16 +65,16 @@ I've learned lot of things in this challenge:
 import { createSlice } from '@reduxjs/toolkit';
 
 const themeSlice = createSlice({
-	name: 'theme',
-	initialState: {
-		isDark: window.matchMedia('(prefers-color-scheme: dark)').matches,
-	},
-	reducers: {
-		toggle(state) {
-			state.isDark = !state.isDark;
-			document.querySelector('body').classList.toggle('dark-theme');
-		},
-	},
+  name: 'theme',
+  initialState: {
+    isDark: window.matchMedia('(prefers-color-scheme: dark)').matches,
+  },
+  reducers: {
+    toggle(state) {
+      state.isDark = !state.isDark;
+      document.querySelector('body').classList.toggle('dark-theme');
+    },
+  },
 });
 
 const { reducer: themeReducer, actions: themeActions } = themeSlice;
@@ -87,12 +87,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import themeReducer from './theme';
 
 const store = configureStore({
-	reducer: {
-		theme: themeReducer,
-		filterRegion: filterRegionReducer,
-		countries: countriesReducer,
-		search: searchReducer,
-	},
+  reducer: {
+    theme: themeReducer,
+    filterRegion: filterRegionReducer,
+    countries: countriesReducer,
+    search: searchReducer,
+  },
 });
 
 export default store;
@@ -105,9 +105,9 @@ import store from './store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	<Provider store={store}>
-		<App />
-	</Provider>
+  <Provider store={store}>
+    <App />
+  </Provider>
 );
 ```
 
@@ -118,36 +118,36 @@ import { countriesActions } from '../../store/countries';
 import { searchActions } from '../../store/search';
 
 const SearchBar = () => {
-	const isDark = useSelector(state => state.theme.isDark);
-	const search = useSelector(state => state.search.value);
-	const { searchCountry } = countriesActions;
-	const { setSearch } = searchActions;
-	const dispatch = useDispatch();
+  const isDark = useSelector(state => state.theme.isDark);
+  const search = useSelector(state => state.search.value);
+  const { searchCountry } = countriesActions;
+  const { setSearch } = searchActions;
+  const dispatch = useDispatch();
 
-	const searchChangeHandler = e => {
-		dispatch(setSearch(e.target.value));
+  const searchChangeHandler = e => {
+    dispatch(setSearch(e.target.value));
 
-		if (e.target.value.trim() === '') {
-			return;
-		}
+    if (e.target.value.trim() === '') {
+      return;
+    }
 
-		dispatch(searchCountry(e.target.value.trim()));
-	};
+    dispatch(searchCountry(e.target.value.trim()));
+  };
 
-	return (
-		<Card className="search-bar">
-			{isDark || <ion-icon name="search-sharp" />}
-			{isDark && <ion-icon name="search-sharp" className="dark" />}
-			<input
-				className="search-bar__input"
-				type="text"
-				name="search"
-				placeholder="Search for a country..."
-				value={search}
-				onChange={searchChangeHandler}
-			/>
-		</Card>
-	);
+  return (
+    <Card className="search-bar">
+      {isDark || <ion-icon name="search-sharp" />}
+      {isDark && <ion-icon name="search-sharp" className="dark" />}
+      <input
+        className="search-bar__input"
+        type="text"
+        name="search"
+        placeholder="Search for a country..."
+        value={search}
+        onChange={searchChangeHandler}
+      />
+    </Card>
+  );
 };
 ```
 
@@ -159,24 +159,24 @@ import axios from 'axios';
 import { useCallback, useState } from 'react';
 
 const useHttp = () => {
-	const [isLoading, setIsLoading] = useState(false);
-	const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-	const sendRequest = useCallback(async (url, callback) => {
-		setIsLoading(true);
-		setError(null);
+  const sendRequest = useCallback(async (url, callback) => {
+    setIsLoading(true);
+    setError(null);
 
-		try {
-			const res = await axios.get(url);
-			callback(res.data);
-		} catch (err) {
-			setError({ ...err, message: err.message || 'Something went wrong!' });
-		}
+    try {
+      const res = await axios.get(url);
+      callback(res.data);
+    } catch (err) {
+      setError({ ...err, message: err.message || 'Something went wrong!' });
+    }
 
-		setIsLoading(false);
-	}, []);
+    setIsLoading(false);
+  }, []);
 
-	return { isLoading, error, sendRequest };
+  return { isLoading, error, sendRequest };
 };
 ```
 
@@ -184,17 +184,17 @@ const useHttp = () => {
 
 ```js
 const App = () => {
-	return (
-		<div className="App">
-			<Header />
-			<Routes>
-				<Route path="/" element={<AllCountries />} />
-				<Route path=":countryId" element={<Country />} />
-				<Route path="*" element={<NotFound />} />
-			</Routes>
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="/" element={<AllCountries />} />
+        <Route path=":countryId" element={<Country />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
 };
 ```
 
@@ -207,17 +207,17 @@ import React, { Suspense } from 'react';
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const App = () => {
-	return (
-		<div className="App">
-			<Header />
-			<Suspense fallback={<Spinner />}>
-				<Routes>
-					<Route path="*" element={<NotFound />} />
-				</Routes>
-			</Suspense>
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="App">
+      <Header />
+      <Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+      <Footer />
+    </div>
+  );
 };
 ```
 
@@ -225,32 +225,32 @@ const App = () => {
 
 ```scss
 @mixin dark-theme {
-	--color-bg: #202c37;
-	--color-primary: #2b3945;
-	--color-grey: #cbd5e1;
-	--color-text: #ffffff;
+  --color-bg: #202c37;
+  --color-primary: #2b3945;
+  --color-grey: #cbd5e1;
+  --color-text: #ffffff;
 }
 
 @mixin light-theme {
-	--color-bg: #fafafa;
-	--color-primary: #ffffff;
-	--color-grey: #64748b;
-	--color-text: #111517;
+  --color-bg: #fafafa;
+  --color-primary: #ffffff;
+  --color-grey: #64748b;
+  --color-text: #111517;
 }
 
 :root {
-	// Theme
-	@include light-theme;
+  // Theme
+  @include light-theme;
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		@include dark-theme;
-	}
+  :root {
+    @include dark-theme;
+  }
 
-	.dark-theme {
-		@include light-theme;
-	}
+  .dark-theme {
+    @include light-theme;
+  }
 }
 ```
 
