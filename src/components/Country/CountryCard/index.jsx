@@ -21,7 +21,7 @@ const CountryCard = ({ id, img, name, population, region, capital }) => {
 		<Card figure={true} onClick={clickHandler} className="country">
 			<img src={img} alt={`${name} flag`} className="country__flag" />
 			<figcaption className="country__figcaption">
-				<h3 className="country__name">{name}</h3>
+				<h2 className="country__name">{name}</h2>
 				<ul className="country-info">
 					{countryDetails.map(country => (
 						<CountryItem key={getId()} item={country} />
