@@ -263,6 +263,7 @@ Technologies I'd be learning soon:
 - Testing (JS)
 - Blockchain Development
 - Flutter & Dart
+- Cyber Security
 
 ### Useful resources
 
