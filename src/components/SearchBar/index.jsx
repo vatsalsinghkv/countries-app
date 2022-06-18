@@ -17,11 +17,7 @@ const SearchBar = () => {
   useEffect(() => {
     dispatch(searchCountry(search.trim()));
     // Showing and hiding clear button
-    if (search.length) {
-      setShowClear(true);
-    } else {
-      setShowClear(false);
-    }
+    search.length ? setShowClear(true) : setShowClear(false);
   }, [search, dispatch, searchCountry]);
 
   const searchChangeHandler = e => {
