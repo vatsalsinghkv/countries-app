@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
 
-  padding: 0.75rem 0rem 0.75rem 2rem;
+  padding: 0.75rem 1.5rem 0.75rem 2rem;
   max-width: 40rem;
   width: 100%;
 
@@ -17,7 +17,7 @@
     background: none;
     border: none;
     color: var(--color-text);
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
     width: 100%;
     outline: none;
     font-size: 1.5rem;
@@ -30,4 +30,11 @@
       color: var(--color-grey);
     }
   }
+}
+
+.cancel-btn {
+  padding: 0;
+  margin-top: 0.5rem;
+  font-size: 18px;
+  color: var(--color-text);
 }

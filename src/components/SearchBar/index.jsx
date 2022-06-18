@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { countriesActions } from '../../store/countries';
 import { searchActions } from '../../store/search';
@@ -6,20 +7,29 @@ import Card from '../UI/Card';
 import './index.scss';
 
 const SearchBar = () => {
+  const [showClear, setShowClear] = useState(false);
   const isDark = useSelector(state => state.theme.isDark);
   const search = useSelector(state => state.search.value);
   const { searchCountry } = countriesActions;
-  const { setSearch } = searchActions;
+  const { setSearch, clearSearch } = searchActions;
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(searchCountry(search.trim()));
+    // Showing and hiding clear button
+    if (search.length) {
+      setShowClear(true);
+    } else {
+      setShowClear(false);
+    }
+  }, [search, dispatch, searchCountry]);
 
   const searchChangeHandler = e => {
     dispatch(setSearch(e.target.value));
+  };
 
-    if (e.target.value.trim() === '') {
-      return;
-    }
-
-    dispatch(searchCountry(e.target.value.trim()));
+  const clearClickHandler = () => {
+    dispatch(clearSearch());
   };
 
   return (
@@ -34,6 +44,11 @@ const SearchBar = () => {
         value={search}
         onChange={searchChangeHandler}
       />
+      {showClear && (
+        <button className="btn cancel-btn" onClick={clearClickHandler}>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      )}
     </Card>
   );
 };
