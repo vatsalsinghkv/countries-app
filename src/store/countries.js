@@ -1,17 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const filterByRegion = (countries, region) => {
-  return countries.filter(country => {
-    return country.region.toLowerCase() === region;
-  });
-};
-
-const filterByName = (countries, query) => {
-  return countries.filter(country => {
-    return country.name.common.toLowerCase().includes(query.toLowerCase());
-  });
-};
-
 const filter = ({ countries, query = '', region = 'all' }) => {
   return countries.filter(country => {
     return (
