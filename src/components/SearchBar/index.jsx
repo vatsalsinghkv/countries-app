@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { countriesActions } from '../../store/countries';
-import { searchActions } from '../../store/search';
+
 import Card from '../UI/Card';
 
 import './index.scss';
 
 const SearchBar = () => {
   const [showClear, setShowClear] = useState(false);
+  const [search, setSearch] = useState('');
+
   const isDark = useSelector(state => state.theme.isDark);
-  const search = useSelector(state => state.search.value);
   const { searchCountry } = countriesActions;
-  const { setSearch, clearSearch } = searchActions;
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,11 +22,11 @@ const SearchBar = () => {
   }, [search, dispatch, searchCountry]);
 
   const searchChangeHandler = e => {
-    dispatch(setSearch(e.target.value));
+    setSearch(e.target.value);
   };
 
   const clearClickHandler = () => {
-    dispatch(clearSearch());
+    setSearch('');
   };
 
   return (

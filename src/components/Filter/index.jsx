@@ -5,14 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { filterRegionActions } from '../../store/filter-region';
 import { countriesActions } from '../../store/countries';
 import './index.scss';
-import { searchActions } from '../../store/search';
 
 const Filter = () => {
   const { region, showFilter } = useSelector(state => state.filterRegion);
 
   const { toggleFilter, hideFilter, changeRegion } = filterRegionActions;
   const { filterCountries } = countriesActions;
-  const { clearSearch } = searchActions;
 
   const dispatch = useDispatch();
 
@@ -32,7 +30,6 @@ const Filter = () => {
   const regionChangeHandler = e => {
     dispatch(filterCountries(e.target.value));
     dispatch(changeRegion(e.target.value));
-    dispatch(clearSearch());
     dispatch(hideFilter());
   };
 

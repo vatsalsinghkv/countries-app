@@ -12,9 +12,24 @@ const filterByName = (countries, query) => {
   });
 };
 
+const filter = ({ countries, query = '', region = 'all' }) => {
+  return countries.filter(country => {
+    return (
+      (region !== 'all' ? country.region.toLowerCase() === region : true) &&
+      country.name.common.toLowerCase().includes(query.toLowerCase())
+    );
+  });
+};
+
 const countriesSlice = createSlice({
   name: 'countries',
-  initialState: { all: [], filtered: [], active: '' },
+  initialState: {
+    all: [],
+    filtered: [],
+    active: '',
+    search: '',
+    region: 'all',
+  },
   reducers: {
     setCountries(state, action) {
       state.all = action.payload;
@@ -32,27 +47,56 @@ const countriesSlice = createSlice({
       }
     },
     searchCountry(state, action) {
-      state.filtered = filterByName(state.all, action.payload);
+      state.search = action.payload;
+      state.filtered = filter({
+        countries: state.all,
+        query: action.payload,
+        region: state.region,
+      });
     },
     filterCountries(state, action) {
+      state.region = action.payload;
       switch (action.payload) {
         case 'all':
-          state.filtered = state.all;
+          state.filtered = filter({
+            countries: state.all,
+            query: state.search,
+          });
           break;
         case 'africa':
-          state.filtered = filterByRegion(state.all, 'africa');
+          state.filtered = filter({
+            countries: state.all,
+            region: 'africa',
+            query: state.search,
+          });
           break;
         case 'america':
-          state.filtered = filterByRegion(state.all, 'americas');
+          state.filtered = filter({
+            countries: state.all,
+            region: 'americas',
+            query: state.search,
+          });
           break;
         case 'asia':
-          state.filtered = filterByRegion(state.all, 'asia');
+          state.filtered = filter({
+            countries: state.all,
+            region: 'asia',
+            query: state.search,
+          });
           break;
         case 'europe':
-          state.filtered = filterByRegion(state.all, 'europe');
+          state.filtered = filter({
+            countries: state.all,
+            region: 'europe',
+            query: state.search,
+          });
           break;
         case 'oceania':
-          state.filtered = filterByRegion(state.all, 'oceania');
+          state.filtered = filter({
+            countries: state.all,
+            region: 'oceania',
+            query: state.search,
+          });
           break;
         default:
           console.error('Invalid Region');
