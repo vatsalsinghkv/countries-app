@@ -4,6 +4,7 @@ import { getId } from '../../helper';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterRegionActions } from '../../store/filter-region';
 import { countriesActions } from '../../store/countries';
+import { REGION_TYPES } from '../../helper/config';
 import './index.scss';
 
 const Filter = () => {
@@ -33,8 +34,6 @@ const Filter = () => {
     dispatch(hideFilter());
   };
 
-  const filterItems = ['africa', 'america', 'asia', 'europe', 'oceania', 'all'];
-
   return (
     <div className="select">
       <Card className="select__header" onClick={filterClickHandler}>
@@ -47,7 +46,7 @@ const Filter = () => {
       </Card>
       {showFilter && (
         <Card className="select__options" onChange={regionChangeHandler}>
-          {filterItems.map(item => (
+          {REGION_TYPES.map(item => (
             <FilterItem key={getId()} value={item} />
           ))}
         </Card>

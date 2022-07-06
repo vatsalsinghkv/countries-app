@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { REGION_TYPES } from '../helper/config';
 
 const filter = ({ countries, query = '', region = 'all' }) => {
   return countries.filter(country => {
@@ -43,53 +44,31 @@ const countriesSlice = createSlice({
       });
     },
     filterCountries(state, action) {
-      state.region = action.payload;
-      switch (action.payload) {
-        case 'all':
-          state.filtered = filter({
-            countries: state.all,
-            query: state.search,
-          });
-          break;
-        case 'africa':
-          state.filtered = filter({
-            countries: state.all,
-            region: 'africa',
-            query: state.search,
-          });
-          break;
-        case 'america':
-          state.filtered = filter({
-            countries: state.all,
-            region: 'americas',
-            query: state.search,
-          });
-          break;
-        case 'asia':
-          state.filtered = filter({
-            countries: state.all,
-            region: 'asia',
-            query: state.search,
-          });
-          break;
-        case 'europe':
-          state.filtered = filter({
-            countries: state.all,
-            region: 'europe',
-            query: state.search,
-          });
-          break;
-        case 'oceania':
-          state.filtered = filter({
-            countries: state.all,
-            region: 'oceania',
-            query: state.search,
-          });
-          break;
-        default:
-          console.error('Invalid Region');
-          break;
+      const selectedRegion = action.payload;
+      state.region = selectedRegion;
+
+      if (action.region === 'all') {
+        state.filtered = filter({
+          countries: state.all,
+          query: state.search,
+        });
+        return;
       }
+
+      const foundRegion = REGION_TYPES.find(
+        region => selectedRegion === region
+      );
+
+      if (!foundRegion) {
+        console.error('Invalid Region');
+        return;
+      }
+
+      state.filtered = filter({
+        countries: state.all,
+        region: foundRegion,
+        query: state.search,
+      });
     },
   },
 });
