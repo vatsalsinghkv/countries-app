@@ -3,16 +3,16 @@ import './index.scss';
 
 const Footer = ({
   name = 'Vatsal Singh',
-  github = 'https://github.com/vatsalsinghkv',
+  github = 'https://github.com/vatsalsinghkv/countries-app',
 }) => {
   return (
-    <footer className="footer">
+    <footer className='footer'>
       {'created by '}
-      <a className="name" href={github} target="_blank" rel="noreferrer">
+      <a className='name' href={github} target='_blank' rel='noreferrer'>
         {name}
       </a>
       {' - '}
-      <a href="https://www.frontendmentor.io/" target="_blank" rel="noreferrer">
+      <a href='https://www.frontendmentor.io/' target='_blank' rel='noreferrer'>
         frontendmentor.io
       </a>
     </footer>

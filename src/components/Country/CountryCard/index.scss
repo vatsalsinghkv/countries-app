@@ -4,6 +4,7 @@
 
   cursor: pointer;
 
+  // & -> .country:hover
   &:hover,
   &:focus {
     transform: translateY(-8px);
